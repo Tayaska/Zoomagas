@@ -1,3 +1,15 @@
+// app/assets/stylesheets/app.scss
+
+@import "cart";
+@import "password"; // Виправте назву, якщо це "pasword"
+@import "registration";
+@import "signin";   // Виправте назву, якщо це "singin"
+@import "order";
+@import "product";
+@import "about";
+@import "contact";
+@import "prodtov";
+
 body, html {
   margin: 0;
   padding: 0;
