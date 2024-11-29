@@ -1,0 +1,37 @@
+<h1></h1>
+<%= link_to "< На головну", root_path, class: "back-home-button" %>
+<h1>Додати новий товар</h1>
+
+<%= form_with model: @product, local: true do |form| %>
+  <div class="form-container">
+    <div class="form-group">
+      <%= form.label :name, "Назва товару" %>
+      <%= form.text_field :name, placeholder: "Введіть назву товару" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description, "Опис товару" %>
+      <%= form.text_area :description, placeholder: "Опис товару" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :price, "Ціна" %>
+      <%= form.number_field :price, step: 0.01, placeholder: "Введіть ціну" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :category, "Категорія" %>
+      <%= form.text_field :category, placeholder: "Введіть категорію" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :image, "Фото товару" %>
+      <%= form.file_field :image %>
+    </div>
+
+    <div class="form-actions">
+      <%= form.submit "Створити товар", class: "submit-btn" %>
+    </div>
+  </div>
+<% end %>
+

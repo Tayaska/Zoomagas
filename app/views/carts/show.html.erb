@@ -1,0 +1,75 @@
+<h1></h1>
+<%= link_to "< Каталог", products_path, class: "back-home-button" %>
+<h1>Ваш кошик</h1>
+
+
+
+<div class="cart-container">
+  <% if @cart_items.any? %>
+    <table>
+      <thead>
+      <tr>
+        <th>Товар</th>
+        <th>Кількість</th>
+        <th>Ціна</th>
+        <th>Дії</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @cart_items.each do |item| %>
+        <tr>
+          <td><%= item.product.name %></td>
+
+          <!-- Форма для зміни кількості товару -->
+          <td>
+            <div class="quantity-controls">
+              <!-- Кнопка зменшити -->
+              <%= form_with(url: update_quantity_cart_path(item), method: :patch, local: true) do |f| %>
+                <%= f.hidden_field :quantity, value: item.quantity - 1 %>
+                <button type="submit" class="quantity-btn decrease">-</button>
+              <% end %>
+
+              <!-- Відображення кількості -->
+              <%= item.quantity %>
+
+              <!-- Кнопка збільшити -->
+              <%= form_with(url: update_quantity_cart_path(item), method: :patch, local: true) do |f| %>
+                <%= f.hidden_field :quantity, value: item.quantity + 1 %>
+                <button type="submit" class="quantity-btn increase">+</button>
+              <% end %>
+            </div>
+          </td>
+
+
+
+
+
+          <!-- Ціна товару -->
+          <td><%= number_to_currency(item.product.price * item.quantity, unit: "", delimiter: " ", format: "%n грн") %></td>
+
+          <!-- Кнопка для видалення товару -->
+          <td>
+            <%= button_to 'Видалити', remove_cart_path(item), method: :delete, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <p><strong>Загальна сума: <%= number_to_currency(@cart_items.sum { |item| item.product.price * item.quantity }, unit: "", delimiter: " ", format: "%n грн") %></strong></p>
+
+    <div class="cart-actions">
+      <%= button_to 'Очистити кошик', clear_cart_path, method: :delete, class: "btn btn-warning" %>
+      <%= link_to "Оформити замовлення", checkout_cart_path, class: "checkout-link" %>
+    </div>
+  <% else %>
+    <p>Ваш кошик порожній.</p>
+  <% end %>
+</div>
+
+
+
+
+
+
+

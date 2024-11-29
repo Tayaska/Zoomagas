@@ -1,0 +1,91 @@
+<h1></h1>
+<%= link_to "< Каталог", products_path, class: "back-home-button" %>
+<div class="product-page-container">
+  <h1><%= @product.name %></h1>
+
+
+  <div class="product-image-container">
+    <%#= image_tag @product.image, alt: @product.name, class: "product-image" %>
+    <% if @product.image.attached? %>
+      <%= image_tag @product.image, alt: @product.name, class: "product-image" %>
+    <% else %>
+      <p>No image</p>
+    <% end %>
+  </div>
+
+  <div class="product-info">
+    <p class="product-description"><%= @product.description %></p>
+    <p class="product-price">Ціна: <%= number_to_currency(@product.price, unit: "", delimiter: " ", format: "%n грн") %></p>
+
+
+    <%= button_to 'Додати у кошик', add_cart_path(product_id: @product.id), method: :post, class: "btn-primary" %>
+  </div>
+</div>
+
+<div class="comments-section">
+  <div class="comments-header">
+    <h3>Кількість коментарів (<%= @product.comments.count %>)</h3>
+    <div class="comments-toggle">
+      <span>Коментарі "<%= @comments_enabled ? 'ON' : 'OFF' %>"</span>
+      <input type="checkbox" <%= @comments_enabled ? 'checked' : '' %> />
+    </div>
+  </div>
+
+  <div class="add-comment">
+    <h3>Додати коментар</h3>
+    <%= render 'comments/form' %>
+  </div>
+
+  <div class="comments-list">
+    <% @product.comments.where(parent_id: nil).each do |comment| %>
+      <div class="comment-item">
+        <div class="comment-author">
+          <div class="author-info">
+            <span class="author-name"><%= comment.user.present? ? comment.user.name : 'Анонім' %></span>
+            <span class="comment-date"><%= time_ago_in_words(comment.created_at) %> ago</span>
+          </div>
+        </div>
+        <div class="comment-content">
+          <p><%= comment.content %></p>
+          <div class="comment-actions">
+            <a href="#">Оновити</a>
+            <a href="#">Відповісти</a>
+            <a href="#">Перекласти</a>
+          </div>
+        </div>
+        <!-- Відображення відповідей -->
+        <div class="replies">
+          <% comment.replies.each do |reply| %>
+            <div class="reply-item">
+              <div class="reply-author">
+                <div class="author-info">
+                  <span class="author-name"><%= reply.user.present? ? reply.user.name : 'Анонім' %></span>
+                  <span class="comment-date"><%= time_ago_in_words(reply.created_at) %> ago</span>
+                </div>
+              </div>
+              <div class="reply-content">
+                <p><%= reply.content %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

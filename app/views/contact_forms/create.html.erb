@@ -1,0 +1,12 @@
+<h1></h1>
+<%= link_to "< На головну", root_path, class: "back-home-button" %>
+<h1>Дякуємо за ваше повідомлення!</h1>
+<p>Ми отримали ваші дані і найближчим часом з вами зв'яжуться.</p>
+
+
+<% if flash[:notice] %>
+  <div class="notice-message">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+

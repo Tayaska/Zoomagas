@@ -1,0 +1,6 @@
+<%= form_with(model: [ @product, Comment.new ], local: true) do |form| %>
+  <div class="form-group">
+    <%= form.text_area :content, class: "form-control", placeholder: "Ваш коментар" %>
+  </div>
+  <%= form.submit "Додати коментар", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,39 @@
+<h1></h1>
+<%= link_to "< На головну", root_path, class: "back-home-button" %>
+
+<main>
+  <%= form_with(model: @contact_form, local: true) do |form| %>
+    <div class="form-group">
+      <%= form.label :name, "Ваше ім'я:" %>
+      <%= form.text_field :name, required: true, placeholder: "Введіть ваше ім'я" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :email, "Ваша електронна пошта:" %>
+      <%= form.email_field :email, required: true, placeholder: "Введіть вашу електронну пошту" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :message, "Повідомлення:" %>
+      <%= form.text_area :message, required: true, placeholder: "Напишіть ваше повідомлення" %>
+    </div>
+
+    <% if @contact_form.errors.any? %>
+      <div class="errors">
+        <h3>Помилки:</h3>
+        <ul>
+          <% @contact_form.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-actions">
+      <%= form.submit "Відправити", class: "submit-btn" %>
+    </div>
+  <% end %>
+
+</main>
+
+

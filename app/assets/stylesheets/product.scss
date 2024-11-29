@@ -1,0 +1,314 @@
+// Заголовок сторінки продукту
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+// Посилання назад до каталогу
+.back-home-link {
+  display: inline-block;
+  margin: 10px;
+  font-size: 1rem;
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-home-link:hover {
+  color: #2980b9;
+}
+
+// Контейнер для продукту (для зображення і інформації)
+.product-page-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 1200px;
+}
+
+/* Контейнер для зображення продукту */
+.product-image-container {
+
+  text-align: center;
+  background-color: #f8f8f8;
+
+
+
+}
+
+/* Зображення продукту */
+.product-image {
+  width: 100%; /* Розтягуємо зображення на всю ширину контейнера */
+  height: 100%; /* Робимо зображення повністю заповненим по висоті */
+  object-fit: cover; /* Зберігаємо пропорції зображення */
+  border-radius: 8px; /* Округляємо кути */
+}
+
+
+// Контейнер для інформації про продукт
+.product-info {
+  flex: 1 1 55%; // Інформація займає 55% ширини
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+.product-bottom {
+  margin-top: auto; /* Зрушує блок із ціною донизу */
+  text-align: center;
+
+}
+// Опис продукту
+.product-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+// Ціна продукту
+.product-price {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #0d120f;
+  margin-bottom: 20px;
+}
+
+// Кнопка додавання у кошик
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+/// Секція коментарів
+.comments-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+
+  .comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h3 {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+
+    .comments-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      input[type="checkbox"] {
+        accent-color: #007bff;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .add-comment {
+    margin-bottom: 20px;
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+  }
+
+  .comments-list {
+    .comment-item {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 15px;
+
+      .comment-author {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .author-avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .author-info {
+          .author-name {
+            font-weight: bold;
+            color: #333;
+          }
+
+          .comment-date {
+            font-size: 0.85rem;
+            color: #777;
+          }
+        }
+      }
+
+      .comment-content {
+        margin-top: 10px;
+
+        p {
+          margin: 0;
+          font-size: 1rem;
+          color: #333;
+        }
+
+        .comment-actions {
+          display: flex;
+          gap: 15px;
+          margin-top: 10px;
+
+          a {
+            font-size: 0.85rem;
+            color: #007bff;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .replies {
+        margin-top: 15px;
+        padding-left: 30px;
+
+        .reply-item {
+          display: flex;
+          flex-direction: column;
+          margin-top: 10px;
+          padding: 10px;
+          background: #f9f9f9;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+
+          .reply-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .author-avatar {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+            }
+
+            .author-info {
+              .author-name {
+                font-weight: bold;
+              }
+
+              .comment-date {
+                font-size: 0.8rem;
+                color: #777;
+              }
+            }
+          }
+
+          .reply-content {
+            margin-top: 10px;
+
+            p {
+              margin: 0;
+              font-size: 0.9rem;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-primary {
+    width: 100%; // Кнопка займає всю ширину на малих екранах
+  }
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.back-home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #87b0dc; /* Blue background */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-home-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight raise on hover */
+}
+
+.back-home-button:focus {
+  outline: none; /* Removes the outline when focused */
+}
+

@@ -1,0 +1,27 @@
+<h1></h1>
+<%= link_to "< На головну", root_path, class: "back-home-button" %>
+
+<h1>Каталог товарів </h1> <%= link_to 'Додати новий товар', new_product_path, class: 'add-product-link' %>
+
+<div class="product-grid">
+  <% @products.each do |product| %>
+    <div class="product-item">
+      <%#= image_tag product.image, alt: product.name, class: 'product-image' %>
+      <% if product.image.attached? %>
+        <%= image_tag product.image, alt: product.name, class: "product-image" %>
+      <% else %>
+        <p>No image</p>
+      <% end %>
+      <h3><%= product.name %></h3>
+
+      <div class="product-bottom">
+        <p class="product-price">Ціна: <%= product.price %> грн</p>
+        <p><%= link_to 'Переглянути', product_path(product), class: 'product-link' %></p>
+      </div>
+
+    </div>
+  <% end %>
+</div>
+
+
+

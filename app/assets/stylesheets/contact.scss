@@ -1,0 +1,108 @@
+/* Загальні стилі для сторінки */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #2980b9;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+/* Стиль для заголовка назад на головну */
+.main-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Контейнер для контактної форми */
+.form-group {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.form-group p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Стилі для форми */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1rem;
+  color: #555;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Стиль для кнопки відправки */
+.submit-btn {
+  font-size: 1rem;
+  color: white;
+  background-color: #6bcf12;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #3498db;
+}
+
+/* Адаптація для мобільних */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px;
+  }
+
+  .contact-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form input, .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,24 @@
+<h1></h1>
+<%= link_to "< Кошик", cart_path, class: "back-home-button" %>
+<div class="cart-container">
+  <h1>Оформлення замовлення</h1>
+
+  <% if @cart_items.any? %>
+    <ul>
+      <% @cart_items.each do |item| %>
+        <li>
+          <%= item.product.name %> - <%= item.quantity %> шт. -
+          <%= number_to_currency(item.product.price * item.quantity, unit: "", delimiter: " ", format: "%n грн") %>
+        </li>
+      <% end %>
+    </ul>
+
+    <h2>Загальна сума: <%= number_to_currency(@cart_items.sum { |item| item.product.price * item.quantity }, unit: "", delimiter: " ", format: "%n грн") %></h2>
+
+    <%= link_to "Підтвердити замовлення", new_order_path, class: "btn" %>
+
+  <% else %>
+    <p>Ваш кошик порожній. <%= link_to "До каталогу", products_path %></p>
+  <% end %>
+</div>
+

@@ -1,0 +1,8 @@
+<%= form_with(model: [comment.product, comment.replies.new(parent_id: comment.id)], local: true) do |form| %>
+  <div class="form-group">
+    <%= form.text_area :content, class: "form-control", placeholder: "Ваша відповідь" %>
+  </div>
+  <%= form.submit "Відповісти", class: "btn btn-secondary" %>
+<% end %>
+
+

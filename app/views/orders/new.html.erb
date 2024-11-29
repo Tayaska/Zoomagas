@@ -1,0 +1,48 @@
+<h1></h1>
+<%= link_to "< Кошик", cart_path, class: "back-home-button" %>
+<div class="order-form-container">
+  <h1>Оформлення замовлення</h1>
+
+  <%= form_with model: @order, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "Ваше ім'я" %>
+      <%= f.text_field :name, class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, "Ваш Email" %>
+      <%= f.email_field :email, class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :phone, "Телефон" %>
+      <%= f.text_field :phone, class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :address, "Адреса доставки" %>
+      <%= f.text_field :address, class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :delivery_method, "Спосіб доставки" %>
+      <%= f.select :delivery_method, ["Нова пошта", "Укрпошта", "Кур'єр","Самовиніс"], {}, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :payment_method, "Спосіб оплати" %>
+      <%= f.select :payment_method, ["Готівка", "Картка", "Накладний платіж"], {}, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :comment, "Коментар" %>
+      <%= f.text_area :comment, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Підтвердити замовлення", class: "btn" %>
+  <% end %>
+</div>
+
+
+
+
