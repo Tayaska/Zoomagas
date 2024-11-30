@@ -36,7 +36,9 @@
 
   <div class="search-bar">
     <%= form_with url: products_path, method: :get, local: true, class: "search-form" do %>
-      <input type="text" name="query" placeholder="Пошук товарів" value="<%= params[:query] %>" class="search-input">
+      <label>
+        <input type="text" name="query" placeholder="Пошук товарів" value="<%= params[:query] %>" class="search-input">
+      </label>
       <button type="submit" class="search-btn">Пошук</button>
     <% end %>
   </div>

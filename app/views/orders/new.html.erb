@@ -1,6 +1,6 @@
 <h1></h1>
 <%= link_to "< Кошик", cart_path, class: "back-home-button" %>
-<div class="order-form-container">
+
   <h1>Оформлення замовлення</h1>
 
   <%= form_with model: @order, local: true do |f| %>
@@ -39,9 +39,11 @@
       <%= f.text_area :comment, class: "form-control" %>
     </div>
 
+  <div class="form-group">
     <%= f.submit "Підтвердити замовлення", class: "btn" %>
+  </div>
   <% end %>
-</div>
+
 
 
 

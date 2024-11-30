@@ -39,10 +39,6 @@ Rails.application.routes.draw do
     patch 'update_quantity/:id', to: 'carts#update_quantity', as: :update_quantity
 
   end
-
-
-
-
   # Інші ресурси
   resources :orders, only: [:new, :create]
 end

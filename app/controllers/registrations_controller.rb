@@ -9,15 +9,14 @@ class RegistrationsController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      # Автоматична автентифікація після реєстрації
-      user = User.authenticate_by(user_params.permit(:email_address, :password))
-      start_new_session_for(user)
-      redirect_to after_authentication_url, notice: "Account successfully registered!"
+      # Автоматичне увійдення користувача
+      sign_in(@user)
+      redirect_to after_sign_in_path_for(@user), notice: "Account successfully registered!"
     else
-      # Якщо валідація не пройшла, повернути форму з помилками
       render :new, status: :unprocessable_entity
     end
   end
+
 
   private
 

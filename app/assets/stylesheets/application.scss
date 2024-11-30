@@ -1,15 +1,5 @@
 // app/assets/stylesheets/application.scss
 
-@import "cart";
-@import "password"; // Виправте назву, якщо це "pasword"
-@import "registration";
-@import "signin";   // Виправте назву, якщо це "singin"
-@import "order";
-@import "product";
-@import "about";
-@import "contact";
-@import "prodtov";
-
 body, html {
   margin: 0;
   padding: 0;
@@ -194,17 +184,26 @@ nav ul li a:hover {
 }
 
 .btn {
-   color: #ffffff;
-   background: #45a52f;
-   padding: 10px 20px;
-   text-decoration: none;
-   font-weight: bold;
-   border-radius: 5px;
-   transition: background-color 0.3s;
+  color: #ffffff;
+  background: #45a52f;
+  padding: 8px 16px; // Середній розмір відступів
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px; // Трохи більший текст для середнього розміру
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: inline-block;
+  text-align: center; // Вирівнювання тексту всередині кнопки
+  margin: 0 auto; // Центрування кнопки в контейнері
+  width: auto; // Встановлення автоматичної ширини (можна змінити на фіксовану)
+  height: auto;
+
   &:hover {
-    background-color: #3fd31a; // Темно-червоний фон при ховері
+    background-color: #3fd31a; // Темно-зелений фон при ховері
   }
- }
+}
+
+
 .btn-danger {
   background: #ba6969;
 
