@@ -9,7 +9,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.assets.compile = false
-  config.assets.precompile += %w( application.scss )
+  config.assets.precompile += %w( application.css )
 
   config.active_storage.service = :local
   config.force_ssl = true
