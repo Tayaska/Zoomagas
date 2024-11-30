@@ -1,4 +1,14 @@
 // app/assets/stylesheets/application.scss
+@import 'about';
+@import 'cart';
+@import 'checkout';
+@import 'contact';
+@import 'order';
+@import 'password';
+@import 'prodtov';
+@import 'product';
+@import 'registration';
+@import 'signin';
 
 body, html {
   margin: 0;
