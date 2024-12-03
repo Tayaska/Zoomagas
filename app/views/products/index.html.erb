@@ -1,7 +1,12 @@
 <h1></h1>
 <%= link_to "< На головну", root_path, class: "back-home-button" %>
 
-<h1>Каталог товарів </h1> <%= link_to 'Додати новий товар', new_product_path, class: 'add-product-link' %>
+<h1>Каталог товарів </h1> <% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'Додати товар', new_product_path, class: 'btn btn-primary' %>
+<% else %>
+  <p>Тільки адміністратор може додавати товар</p>
+<% end %>
+
 
 <div class="product-grid">
   <% @products.each do |product| %>

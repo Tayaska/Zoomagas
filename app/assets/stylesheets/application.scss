@@ -17,6 +17,7 @@ body, html {
   background-color: #fff;
   flex-direction: column;
 
+
 }
 
 /* Стилі для логотипу та назви магазину */
@@ -43,6 +44,7 @@ header {
   padding: 20px;
   background-color: #a0a0a0; /* Замінили зелений на сірий */
   border-bottom: 1px solid #eaedf1;
+  position: fixed;
 }
 
 /* Логотип в header */

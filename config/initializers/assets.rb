@@ -3,12 +3,10 @@
 # Version of your assets, change this if you want to expire all your assets.
 # config/initializers/assets.rb
 
-Rails.application.config.assets.paths += [
-  Rails.root.join("app", "assets", "stylesheets")
-]
+Rails.application.config.assets.version = "1.0"
 
 # Додати SCSS файли до precompile, якщо необхідно
-Rails.application.config.assets.precompile += %w( application.scss )
+#Rails.application.config.assets.precompile += %w( application.scss )
 
 
 # Add additional assets to the asset load path.
