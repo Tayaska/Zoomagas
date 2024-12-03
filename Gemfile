@@ -44,7 +44,8 @@ group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
-  gem 'sassc-rails'
+  gem 'bcrypt', platforms: :ruby # to resolve the cannot load such file -- sassc
+  gem "sassc-rails" # to resolve the cannot load such file -- sassc
 
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
