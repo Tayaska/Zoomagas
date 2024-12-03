@@ -1,12 +1,10 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 
-import "controllers"
-
-//= require rails-ujs
-
+// app/assets/javascripts/application.js
 //= require jquery
-//= require jquery_ujs
-//= require cart
+//= require rails-ujs
+//= require_tree .
+
 // app/assets/javascripts/cart.js
 document.addEventListener("DOMContentLoaded", function() {
     // Отримуємо всі кнопки для збільшення і зменшення кількості
